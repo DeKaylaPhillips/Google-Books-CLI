@@ -41,19 +41,19 @@ def search_books():
             title = volume_info['title']
             publisher = volume_info['publisher']
             author_lists = volume_info['authors']
-            print(author_lists)
+            number_of_authors = len(author_lists)
             
             # TODO: LOOP THROUGH THE LIST OF AUTHORS. WANT TO DISPLAY WHETHER OR NOT EACH BOOK HAS ONLY 1 AUTHOR OR MORE THAN 1 AUTHOR
-            # for i, author in enumerate(author_lists):
+            if number_of_authors > 1: 
+                for i, author in enumerate(author_lists):
+                    i = i + 1
+                    author = (f"Author {i}: {author}")
+                    print(author)
+            elif number_of_authors == 1:
+                for author in author_lists:
+                    author = (f"Author: {author}")
+                    print(author)
                 
-                # if 
-                #     print(f'Author {i + 1}: {author}')
-                #     authors = f'Author: {author}'
-                #     print(f"1 author: {authors}")
-                # elif i > 1:
-                #     authors = f'Author {i}: {author}'
-                #     print(f"More than 1 author: {authors}")
-                    
                     # print(f"\nTitle: {title}\n{authors}\nPublisher: {publisher}\n")
             
         # book_information = list(filter(data))
