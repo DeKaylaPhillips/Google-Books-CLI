@@ -2,7 +2,7 @@
 
 Line 26 - Search Query Errors 
 - [X] Program accounts for no input at all [2022-12-20]
-- [] Program does not yet handle typos
+- [] Program does not yet handle typos and integers in initial search input
 - [] Book numbering issues with certain inputs... indexing is correct because when selecting a book, the correct book is chosen, even if it does not properly correlate to the number of the book displayed.
 
 Line 64 - Book Selection Errors *Fixed*
@@ -21,7 +21,7 @@ Reading List Errors *Fixed*
 - Reading list should reflect updated status with every book a user chooses to add to the list 
 - [X] Reading list not updating with multiple selections. [2022-12-20] (created global reading_list variable instead of local reading_list variable so list does not recreate every time the "search_books()" function is called) [2022-12-20]
 
-Line 30 - Publisher Errors from API
+Line 30 - Publisher Errors from API *Fixed*
 - Some books do not have publishers. 
 - [X] Need to account for this potential error prior to displaying all data. [2022-12-20] (used .get() method to set new default value for publishers not present in the data)
   

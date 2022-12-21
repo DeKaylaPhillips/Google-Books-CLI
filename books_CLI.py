@@ -12,7 +12,7 @@ def search_books():
     if not search_query:
         print("Please try to enter your search again!\n")
         search_books()
-    else:
+    elif search_query and type(str(search_query)):
         print(f"\nTop 5 Books Related to: '{search_query}'")
     
     api_key = os.environ['API_KEY'] # API key secured in .env file and placed in .gitignore, accessible through the os module
@@ -28,7 +28,6 @@ def search_books():
             volume_info = book['volumeInfo'] # volumeInfo obj will hold all necessary information to be displayed to the user on the CLI
             title = volume_info['title'] # grabs each title contained in the volumnInfo object  
             publisher = volume_info.get('publisher', 'Not Available')
-            # publisher = volume_info['publisher'] # grabs each publishing company's name from the volumeInfo object
             author_lists = volume_info['authors'] # grabs each list of authors from the volumeInfo object
             num_of_authors = len(author_lists) # used to find out which books have multiple or only one author 
             
