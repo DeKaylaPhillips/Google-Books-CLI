@@ -4,6 +4,7 @@ Line 26 - Search Query Errors
 - [X] Program accounts for no input at all [2022-12-20]
 - [] Program does not yet handle typos and integers in initial search input
 - [] Book numbering issues with certain inputs... indexing is correct because when selecting a book, the correct book is chosen, even if it does not properly correlate to the number of the book displayed.
+- [] Need to account for null authors
 
 Line 64 - Book Selection Errors *Fixed*
 - Selection should only be successful with input numbers 0-5.
