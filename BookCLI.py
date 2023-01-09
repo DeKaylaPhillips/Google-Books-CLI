@@ -101,13 +101,14 @@ class CommandLineInterface: # This class handles user input and passes it the th
     def select_book(self, search_results): # Displays a prompt that allows the user to select a book from their query results or return to main menu to make a new search.
         add_to_list = input("Would you like to add a book to your reading list? Enter (Y) for Yes or (N) for No.\n")
 
+ 
         if add_to_list == 'N' or add_to_list == 'n': # Returns a user to the main menu to either create a new search query or exit the interface.
             self.main_menu()
         
         elif add_to_list == 'Y' or add_to_list == 'y': # Displays reading list if input value matches a book from search query results.
             book_selection = input("\nEnter the number of the book you'd like to add to the list: \n")
-            
-            if int(book_selection) not in range(1, 6): # Selection was not a valid input choice ranging from numbers 1-5.
+
+            if book_selection.isalpha() or not book_selection or int(book_selection) not in range(1, 6): # Selection was not a valid input choice ranging from numbers 1-5.
                 print("\n== Sorry, that was an invalid selection. ==\n")
                 self.main_menu()
             
@@ -133,10 +134,10 @@ class CommandLineInterface: # This class handles user input and passes it the th
             self.main_menu()
         
         # Selection was not a valid input option (1 or 2).
-        print("== Sorry, that was an invalid selection. ==")
+        print("\n== Sorry, that was an invalid selection. ==\n")
         self.main_menu()
 
-## TESTING INTERFACE
+## INTERFACE
 interface = CommandLineInterface()
 
 ## TESTING BOOK DATA ##

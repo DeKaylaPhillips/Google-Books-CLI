@@ -3,7 +3,7 @@ from BookCLI import BookData, ReadingList, GoogleBooksAPI, CommandLineInterface
 
 class TestBookData(unittest.TestCase):
     def test_0_test_constructor(self):
-        book_data_obj = BookData(title='Harry Potter & the Chamber of Secrets', author='J.K. Rowling', publisher='JKPublishings')
+        book_data_obj = BookData(book_id=1, title='Harry Potter & the Chamber of Secrets', author='J.K. Rowling', publisher='JKPublishings')
         
         self.assertEqual(book_data_obj.title, 'Harry Potter & the Chamber of Secrets')
         self.assertEqual(book_data_obj.author, 'J.K. Rowling')
@@ -12,7 +12,7 @@ class TestBookData(unittest.TestCase):
 class TestReadingList(unittest.TestCase):
     def test_1_add_to_reading_list(self):
         reading_list_obj = ReadingList('== Reading List ==') 
-        book_data_obj = BookData(title='Harry Potter & the Chamber of Secrets', author='J.K. Rowling', publisher='JKPublishings')
+        book_data_obj = BookData(book_id=1, title='Harry Potter & the Chamber of Secrets', author='J.K. Rowling', publisher='JKPublishings')
         reading_list_obj.add_to_reading_list(book_data_obj)
         
         self.assertEqual(len(reading_list_obj.reading_list), 1)
@@ -25,7 +25,6 @@ class TestGoogleBooksAPI(unittest.TestCase):
         api_obj.get_books_from_api(query='Harry Potter')
         
         self.assertEqual(len(api_obj.book_results), 5)
-        # api_obj.get_books_from_api(query='boopbeebopbow_')  
-
+        
 if __name__ == '__main__':
     unittest.main(verbosity=True)
