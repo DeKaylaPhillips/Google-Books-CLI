@@ -1,5 +1,5 @@
 import unittest
-from BookCLI import BookData, ReadingList, GoogleBooksAPI
+from BookCLI import BookData, ReadingList, GoogleBooksAPI, CommandLineInterface
 
 class TestBookData(unittest.TestCase):
     def test_0_test_constructor(self):
@@ -23,6 +23,7 @@ class TestGoogleBooksAPI(unittest.TestCase):
     def test_2_get_books_from_api(self):
         api_obj = GoogleBooksAPI()
         api_obj.get_books_from_api(query='Harry Potter')
+        
         self.assertEqual(len(api_obj.book_results), 5)
         # api_obj.get_books_from_api(query='boopbeebopbow_')  
 
